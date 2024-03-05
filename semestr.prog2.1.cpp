@@ -140,3 +140,14 @@ void sellProduct(dispenserType& product, cashRegister& pCounter)
     else
         cout << "Извините, товар закончился." << endl;
 }
+         if (amount > product.getCost()) 
+         {
+             pCounter.acceptAmount(amount);
+             product.makeSale();
+             cout << "Заберите сдачу" << endl;
+         }
+
+         
+ 
+
+        
