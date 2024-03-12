@@ -126,7 +126,13 @@ void sellProduct(dispenserType& product, cashRegister& pCounter)
             amount = amount + amount2;
         }
 
-        if (amount >= product.getCost())
+        if (amount > product.getCost())
+        {
+            cout << "Пожалуйста, возьмите сдачу " << amount - product.getCost() << " рубли" << endl;
+            amount = amount - product.getCost();
+        }
+        
+        if (amount = product.getCost())
         {
             pCounter.acceptAmount(amount);
             product.makeSale();
